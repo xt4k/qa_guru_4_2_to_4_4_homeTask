@@ -14,18 +14,18 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 public class Student {
     String dateInPattern = "dd MMM yyyy";
     String dateOutPattern = "dd MMMM,yyyy";
-    private String firstName;
-    private String lastName;
-    private String email;
-    private int gender;
-    private String mobileNum;
-    private LocalDate birthDate;
-    private String subjects;
-    private int hobbies;
-    private String address;
-    private File icon;
-    private String state;
-    private String city;
+    private final String firstName;
+    private final String lastName;
+    private final String email;
+    private final int gender;
+    private final String mobileNum;
+    private final LocalDate birthDate;
+    private final String subjects;
+    private final int hobbies;
+    private final String address;
+    private final File icon;
+    private final String state;
+    private final String city;
 
     public Student() {
         Faker faker = new Faker();
