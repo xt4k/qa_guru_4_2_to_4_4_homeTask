@@ -12,8 +12,9 @@ import static java.time.ZoneId.systemDefault;
 import static java.time.format.DateTimeFormatter.ofPattern;
 
 public class Student {
-    String dateInPattern = "dd MMM yyyy";
-    String dateOutPattern = "dd MMMM,yyyy";
+
+    private String dateInPattern = "dd MMM yyyy";
+    private String dateOutPattern = "dd MMMM,yyyy";
     private final String firstName;
     private final String lastName;
     private final String email;
