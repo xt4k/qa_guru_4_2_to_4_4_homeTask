@@ -1,6 +1,7 @@
 package tests;
 
 import helpers.BaseTest;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
@@ -15,6 +16,7 @@ import static org.openqa.selenium.Keys.ENTER;
 
 public class StudentRegFormBirthDateTest extends BaseTest {
 
+    @Disabled
     @Test
     void testStudentBirthDate() {
         StringBuilder mobileNum = new StringBuilder();
