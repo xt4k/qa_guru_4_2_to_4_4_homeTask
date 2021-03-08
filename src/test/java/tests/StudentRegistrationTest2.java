@@ -1,28 +1,21 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import helpers.BaseTest;
-import helpers.pojo.Student;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Keys;
+import pojo.Student;
 
 import java.io.File;
-import java.time.LocalDate;
-import java.util.Random;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static java.lang.String.format;
-import static java.lang.System.getProperty;
-import static java.time.format.DateTimeFormatter.ofPattern;
 import static org.openqa.selenium.Keys.*;
-import static org.openqa.selenium.Keys.ENTER;
 
 public class StudentRegistrationTest2 extends BaseTest {
 
-    @DisplayName("Register FAKE student")
     @Test
+    @DisplayName("Register FAKE student")
     void testStudentRegistrationForm() {
         Student student = new Student();
 
@@ -52,13 +45,12 @@ public class StudentRegistrationTest2 extends BaseTest {
         $("#react-select-4-input").setValue(student.getCity())
                 .pressEnter();
         $("#submit").click();
-
         //Assert section
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $x(".//table//tr[1]/td[2]").shouldHave(text(student.getFirstName() + " " + student.getLastName()));
-        $x(".//table//tr[2]/td[2]").shouldHave(text(student.getEmail()));
-        $x(".//table//tr[3]/td[2]").shouldHave(text(genderName));
-        $x(".//table//tr[4]/td[2]").shouldHave(text(student.getMobileNum()));
-        $x(".//table//tr[5]/td[2]").shouldHave(text(student.getBirthDateOut()));
+        $x("//td[text()='Student Name']").parent().shouldHave(text(student.getFirstName() + " " + student.getLastName()));
+        $x("//td[text()='Student Email']").parent().shouldHave(text(student.getEmail()));
+        $x("//td[text()='Gender']").parent().shouldHave(text(genderName));
+        $x("//td[text()='Mobile']").parent().shouldHave(text(student.getMobileNum()));
+        $x("//td[text()='Date of Birth']").parent().shouldHave(text(student.getBirthDateOut()));
     }
 }

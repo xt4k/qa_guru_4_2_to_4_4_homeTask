@@ -1,4 +1,4 @@
-package helpers.pojo;
+package pojo;
 
 import com.github.javafaker.Faker;
 

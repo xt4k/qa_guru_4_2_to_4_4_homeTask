@@ -1,20 +1,19 @@
 package helpers;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-import static com.codeborne.selenide.Configuration.*;
+import static com.codeborne.selenide.Configuration.startMaximized;
 import static java.lang.System.setProperty;
 
 public class BaseTest {
 
     @BeforeAll
     static void setup() {
-        startMaximized=true;
+        startMaximized = true;
         Properties properties = new Properties();
         try {
             properties.load(new FileReader("src/test/resources/properties/common.properties"));
